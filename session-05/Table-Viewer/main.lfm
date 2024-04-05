@@ -1,0 +1,300 @@
+object Form1: TForm1
+  Left = 456
+  Height = 841
+  Top = 250
+  Width = 1090
+  Caption = 'Table Viewer'
+  ClientHeight = 841
+  ClientWidth = 1090
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 445
+    Top = 211
+    Width = 1090
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object mem: TMemo
+    Left = 0
+    Height = 135
+    Top = 706
+    Width = 1090
+    Align = alBottom
+    Font.Name = 'Courier New'
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 203
+    Top = 0
+    Width = 1090
+    Align = alTop
+    BevelInner = bvLowered
+    ClientHeight = 203
+    ClientWidth = 1090
+    TabOrder = 2
+    object memSQL: TMemo
+      Left = 2
+      Height = 199
+      Top = 2
+      Width = 694
+      Align = alClient
+      BorderStyle = bsNone
+      Font.Height = -28
+      Font.Name = 'Courier New'
+      Lines.Strings = (
+        'SELECT * FROM tabel_kamu'
+      )
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Panel2: TPanel
+      Left = 696
+      Height = 199
+      Top = 2
+      Width = 392
+      Align = alRight
+      ClientHeight = 199
+      ClientWidth = 392
+      TabOrder = 1
+      object btnOpen: TButton
+        Left = 264
+        Height = 80
+        Top = 40
+        Width = 113
+        Caption = 'Open'
+        TabOrder = 0
+        OnClick = btnOpenClick
+      end
+      object edtHost: TEdit
+        Left = 112
+        Height = 33
+        Top = 16
+        Width = 120
+        TabOrder = 1
+        Text = 'localhost'
+      end
+      object Label1: TLabel
+        Left = 15
+        Height = 25
+        Top = 16
+        Width = 42
+        Caption = 'Host:'
+      end
+      object Label2: TLabel
+        Left = 15
+        Height = 25
+        Top = 56
+        Width = 83
+        Caption = 'Username:'
+      end
+      object edtUsername: TEdit
+        Left = 112
+        Height = 33
+        Top = 56
+        Width = 80
+        TabOrder = 2
+        Text = 'root'
+      end
+      object Label3: TLabel
+        Left = 15
+        Height = 25
+        Top = 96
+        Width = 79
+        Caption = 'Password:'
+      end
+      object edtPassword: TEdit
+        Left = 112
+        Height = 33
+        Top = 96
+        Width = 120
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 3
+      end
+      object Label4: TLabel
+        Left = 15
+        Height = 25
+        Top = 144
+        Width = 78
+        Caption = 'Database:'
+      end
+      object edtDatabase: TEdit
+        Left = 112
+        Height = 33
+        Top = 136
+        Width = 120
+        TabOrder = 4
+        Text = 'database_kamu'
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 8
+    Top = 203
+    Width = 1090
+    Align = alTop
+    ResizeAnchor = akTop
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 42
+    Top = 656
+    Width = 1090
+    Align = alBottom
+    ClientHeight = 42
+    ClientWidth = 1090
+    TabOrder = 4
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Height = 40
+      Top = 1
+      Width = 362
+      Align = alLeft
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 40
+      ClientWidth = 362
+      DataSource = DataSource1
+      Options = []
+      TabOrder = 0
+    end
+  end
+  object Splitter2: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 8
+    Top = 698
+    Width = 1090
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object DataSource1: TDataSource
+    DataSet = dq
+    Left = 136
+    Top = 336
+  end
+  object dq: TSQLQuery
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'cid'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'parent_id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'description'
+        DataType = ftMemo
+        Precision = -1
+      end    
+      item
+        Name = 'bot_name'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'key'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'options'
+        DataType = ftMemo
+        Precision = -1
+      end    
+      item
+        Name = 'balance'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'total_receipts'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'created_date'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'created_by'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'state_id'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'status_id'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = DBConnector
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from clients'
+    )
+    Params = <>
+    Macros = <>
+    Left = 296
+    Top = 336
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = DBConnector
+    Left = 456
+    Top = 336
+  end
+  object DBConnector: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    BeforeConnect = DBConnectorBeforeConnect
+    OnLogin = DBConnectorLogin
+    DatabaseName = 'carik_dashboard'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
+    OnLog = DBConnectorLog
+    ConnectorType = 'MySQL 5.7'
+    Left = 616
+    Top = 336
+  end
+  object DBLibraryLoader: TSQLDBLibraryLoader
+    Enabled = False
+    ConnectionType = 'MySQL 5.7'
+    LibraryName = 'C:\app\dev\HeidiSQL\libmariadb.dll'
+    Left = 776
+    Top = 336
+  end
+end
